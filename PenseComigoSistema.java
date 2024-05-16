@@ -30,29 +30,37 @@ public class PenseComigoSistema {
 
     public boolean cadastrarAtividadeProgramacao(String email, int senha, String questao, String linguagem, String[] competencias){
         verificaUsuario(email, senha);
+        Usuario usuario = usuarioHashMap.get(email);
         int codigo = atividadeArrayList.size() + 1;
         Atividade novaAtividade = new AtividadeProgramacao(codigo, questao, competencias, linguagem);
+        usuario.addAtividade(novaAtividade);
         return true;
     }
 
     public boolean cadastraAtividadeProgramacao(String email, int senha, String questao, String[] competencias){
         verificaUsuario(email, senha);
+        Usuario usuario = usuarioHashMap.get(email);
         int codigo = atividadeArrayList.size() + 1;
         Atividade novaAtividade = new AtividadeProgramacao(codigo, questao, competencias);
+        usuario.addAtividade(novaAtividade);
         return true;
     }
 
     public boolean cadastraAtividadeInterdisciplinar(String email, int senha, String questao, String[] competencias, String areaDC){
         verificaUsuario(email, senha);
+        Usuario usuario = usuarioHashMap.get(email);
         int codigo = atividadeArrayList.size() + 1;
         Atividade novaAtividade = new AtividadeInterdisciplinar(codigo, questao, competencias, areaDC);
+        usuario.addAtividade(novaAtividade);
         return true;
     }
 
     public boolean cadastraAtividadeDesplugada(String email, int senha, String descricao, String[] competencias, String material, String tema, int duracao){
         verificaUsuario(email, senha);
+        Usuario usuario = usuarioHashMap.get(email);
         int codigo = atividadeArrayList.size() + 1;
         Atividade novaAtividade = new AtividadeDesplugada(codigo, descricao, competencias, material, tema, duracao);
+        usuario.addAtividade(novaAtividade);
         return true;
     }
 

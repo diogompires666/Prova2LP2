@@ -81,6 +81,10 @@ public class Usuario {
                 "\ntotalAtividades: " + atividadesPessoais.size();
     }
 
+    public void addAtividade(Atividade atividade){
+        this.atividadesPessoais.add(atividade);
+    }
+
     public String repCompara(){
         return this.nickname + " - " + this.atividadesPessoais.size() + ":" + this.calculaPontuacao();
     }
